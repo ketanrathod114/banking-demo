@@ -11,6 +11,12 @@ const customerReducer = (state = initialState, action) => {
       branch: action.payload.branch_name,
     };
   }
+  if(action.type === "DEDUCT_AMOUNT"){
+    return{
+      ...state,
+      balance: state.balance - action.payload
+    }
+  }
 
   return state;
 };

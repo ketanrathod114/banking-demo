@@ -4,7 +4,8 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import "./App.css";
 import Login from "./components/login/Login";
 import Dashboard from "./components/dashboard/Dashboard";
-import Transfer from "./components/dashboard/transfer/Transfer";
+import Transfer from "./components/Transfer";
+import Transactions from "./components/Transactions";
 
 function App() {
   const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
@@ -20,6 +21,9 @@ function App() {
       </Route>
       <Route path="/transfer" exact>
         <Transfer />
+      </Route>
+      <Route path="/transactions" exact>
+        <Transactions />
       </Route>
       <Route path="*">
         <Redirect to="/" />

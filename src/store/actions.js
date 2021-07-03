@@ -12,6 +12,7 @@ export const logout = () => {
 export const doLogin = () => {
   return (dispatch) => {
     dispatch(login());
+    // dispatch(fetchTransaction())
   };
 };
 
@@ -30,3 +31,34 @@ export const customer = (data) => {
     payload: data,
   };
 };
+export const deductAmount = (data) => {
+  return {
+    type: "DEDUCT_AMOUNT",
+    payload: data,
+  };
+};
+
+export const fetchTransaction = () => {
+  return async (dispatch) => {
+    // console.log("called")
+    const response = await fetch("http://localhost:3001/transactions");
+    const responseData = await response.json();
+    // let transaction = responseData.filter((x) => x.customer_id === data);
+    console.log(responseData)
+    dispatch(transactions(...responseData));
+  };
+};
+
+export const transactions = (data) => {
+  return {
+    type: "ALL_TRANSCATIONS",
+    payload: data,
+  };
+};
+export const addTransactions = (data) => {
+  return {
+    type: "ADD_TRANSACTIONS",
+    payload: data,
+  };
+};
+

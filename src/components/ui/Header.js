@@ -18,6 +18,9 @@ const Header = () => {
           <NavLink className="nav-link ml-3 " to="/transfer">
             Transfer
           </NavLink>
+          <NavLink className="nav-link ml-3 " to="/transactions">
+            Transactions
+          </NavLink>
         </div>
         <div className="d-flex">
           <button className="btn btn-outline-danger" onClick={onSubmit}>
