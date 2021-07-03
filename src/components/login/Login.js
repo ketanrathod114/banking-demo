@@ -1,4 +1,3 @@
-import './App.css';
 
 const Login = () => {
   return (
