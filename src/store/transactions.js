@@ -1,11 +1,11 @@
-const initialState = { transactions: [] };
+const initialState = [];
 
 const transactionsReducer = (state = initialState, action) => {
- 
+
   if (action.type === "ALL_TRANSACTIONS") {
     return {
       ...state,
-      transactions : state.transactions.concat(action.payload)
+     ...action.payload
     };
   }
   if (action.type === "ADD_TRANSACTIONS") {

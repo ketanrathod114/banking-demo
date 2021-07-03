@@ -38,18 +38,9 @@ export const deductAmount = (data) => {
   };
 };
 
-export const fetchTransaction = () => {
-  return async (dispatch) => {
-    // console.log("called")
-    const response = await fetch("http://localhost:3001/transactions");
-    const responseData = await response.json();
-    // let transaction = responseData.filter((x) => x.customer_id === data);
-    console.log(responseData)
-    dispatch(transactions(...responseData));
-  };
-};
 
 export const transactions = (data) => {
+  // console.log('here')
   return {
     type: "ALL_TRANSCATIONS",
     payload: data,

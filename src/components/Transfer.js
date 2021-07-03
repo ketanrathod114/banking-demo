@@ -72,14 +72,14 @@ const Transfer = () => {
               <div className="mb-3">
                 <p> Sender account number: {accountNumber}</p>
                 <p> Sender account balance: {balance}</p>
-                <label htmlFor="custid" className="form-label">
+                <label className="form-label">
                   Receivers Bank Account number
                 </label>
 
                 <input
                   type="text"
                   className="form-control"
-                  id="custid"
+                  
                   placeholder="xxxxxxxxxxxxxxxxx"
                   autoComplete="off"
                   onChange={onAccountNumber}
@@ -88,14 +88,14 @@ const Transfer = () => {
               </div>
               <div className="mb-3">
               
-                <label htmlFor="custid" className="form-label">
+                <label  className="form-label">
                   Balance to be transferred
                 </label>
 
                 <input
                   type="text"
                   className="form-control"
-                  id="custid"
+                
                   placeholder="Add amount"
                   autoComplete="off"
                   onChange={onBalance}
@@ -103,14 +103,14 @@ const Transfer = () => {
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="inputPassword" className="form-label">
+                <label  className="form-label">
                   Comments
                 </label>
 
                 <input
                   type="text"
                   className="form-control"
-                  id="custid"
+                
                   placeholder="Add Comment"
                   autoComplete="off"
                   ref={commentRef}
