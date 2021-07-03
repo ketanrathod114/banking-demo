@@ -1,37 +1,30 @@
-import { useSelector } from 'react-redux';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { useSelector } from "react-redux";
+import { Switch, Route, Redirect } from "react-router-dom";
 
-import './App.css';
-import Login from './components/login/Login';
-import Dashboard from './components/dashboard/Dashboard';
+import "./App.css";
+import Login from "./components/login/Login";
+import Dashboard from "./components/dashboard/Dashboard";
+import Transfer from "./components/dashboard/transfer/Transfer";
 
 function App() {
   const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
-  console.log(isLoggedIn)
   return (
-
-      <Switch>
+    <Switch>
       {!isLoggedIn && (
-          <Route path='/'>
-            <Login />
-          </Route>
-        )}
-        <Route path='/' exact>
-          <Dashboard />
+        <Route path="/">
+          <Login />
         </Route>
-        {/* {!isLoggedIn && (
-          <Route path='/auth'>
-            <AuthPage />
-          </Route>
-        )}
-        <Route path='/profile'>
-          {authCtx.isLoggedIn && <UserProfile />}
-          {!authCtx.isLoggedIn && <Redirect to='/auth' />}
-        </Route> */}
-        <Route path='*'>
-          <Redirect to='/' />
-        </Route>
-      </Switch>
+      )}
+      <Route path="/" exact>
+        <Dashboard />
+      </Route>
+      <Route path="/transfer" exact>
+        <Transfer />
+      </Route>
+      <Route path="*">
+        <Redirect to="/" />
+      </Route>
+    </Switch>
   );
 }
 

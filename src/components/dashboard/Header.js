@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { logout } from "../../store/actions";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -7,12 +8,22 @@ const Header = () => {
     dispatch(logout());
   };
   return (
-    <nav className="navbar navbar-dark bg-dark text-white">
+    <nav className="navbar navbar-dark list-group-horizontal bg-dark text-white">
       <div className="container">
-        XYZ bank
-        <button className="btn btn-light" onClick={onSubmit}>
-          Logout
-        </button>
+        <div className="d-flex">
+          <NavLink className="nav-link mr-3" exact to="/">
+            Dashboard
+          </NavLink>
+
+          <NavLink className="nav-link ml-3 " to="/transfer">
+            Transfer
+          </NavLink>
+        </div>
+        <div className="d-flex">
+          <button className="btn btn-outline-danger" onClick={onSubmit}>
+            Logout
+          </button>
+        </div>
       </div>
     </nav>
   );

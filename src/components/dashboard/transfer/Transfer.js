@@ -1,18 +1,13 @@
-import { useDispatch } from "react-redux";
-import { logout } from "../../../store/actions";
+import Header from "../Header";
 
 const Transfer = () => {
-  const dispatch = useDispatch();
-  const onSubmit = () => {
-    dispatch(logout());
-  };
   return (
-    <div className="contaianer text-center">
-      <h1>Transfer</h1>
-      <button className="btn btn-dark" onClick={onSubmit}>
-        Logout
-      </button>
-    </div>
+    <>
+      <Header />
+      <div className="contaianr text-center">
+        <h1>Transfer</h1>
+      </div>
+    </>
   );
 };
 

@@ -3,6 +3,7 @@ const initialState = { id: "", name: "", balance: "", account: "", branch: "" };
 const customerReducer = (state = initialState, action) => {
   if (action.type === "ADD_CUSTOMER") {
     return {
+      ...state,
       id: action.payload.customer_id,
       name: action.payload.name,
       balance: action.payload.balance,

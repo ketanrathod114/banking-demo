@@ -3,12 +3,14 @@ const initialState = { isLoggedIn: false };
 const loginReducer = (state = initialState, action) => {
   if (action.type === "LOGIN") {
     return {
-      isLoggedIn: true
+      ...state,
+      isLoggedIn: true,
     };
   }
   if (action.type === "LOGOUT") {
     return {
-      isLoggedIn: false
+      ...state,
+      isLoggedIn: false,
     };
   }
 

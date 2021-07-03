@@ -54,7 +54,7 @@ const Login = () => {
             </div>
           </div>
           <div className="col-sm-7">
-            <div className="card-body">
+            <div className="card-body py-5">
               <div className="mb-3">
                 <label htmlFor="custid" className="form-label">
                   Customer Id
