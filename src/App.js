@@ -3,11 +3,11 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 
 import './App.css';
 import Login from './components/login/Login';
-import Dashboard from './components/Dashboard';
+import Dashboard from './components/dashboard/Dashboard';
 
 function App() {
-  const isLoggedIn = useSelector((state) => state.isLoggedIn);
-  // console.log(isLoggedIn)
+  const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
+  console.log(isLoggedIn)
   return (
 
       <Switch>

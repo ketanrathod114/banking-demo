@@ -10,6 +10,13 @@ export const logout = () => {
   };
 };
 
+export const addCustomer = (data) => {
+  return {
+    type: "ADD_CUSTOMER",
+    payload: data
+  };
+};
+
 
 
 export const doLogin = () => {

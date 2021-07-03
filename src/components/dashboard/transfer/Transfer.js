@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { logout } from "../../store/actions";
+import { logout } from "../../../store/actions";
 
 const Transfer = () => {
   const dispatch = useDispatch();
