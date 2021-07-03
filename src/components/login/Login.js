@@ -37,7 +37,6 @@ const Login = () => {
       setError("Please enter valid credentials");
       return;
     }
-    console.log("dispatching", customerID);
     dispatch(doLogin());
     dispatch(addCustomer(customerID));
   };
