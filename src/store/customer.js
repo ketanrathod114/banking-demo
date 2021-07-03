@@ -1,6 +1,6 @@
 const initialState = { customer: [] };
 
-const loginReducer = (state = initialState, action) => {
+const customerReducer = (state = initialState, action) => {
   if (action.type === "ADD_CUSTOMER") {
     return {
       customer: [action.payload]
@@ -10,4 +10,4 @@ const loginReducer = (state = initialState, action) => {
 
   return state;
 };
-export default loginReducer;
+export default customerReducer;

@@ -24,24 +24,32 @@
   "accounts": [
     {
       "customer_id": "3456213",
+      "name": "John",
+      "balance": "200000",
       "account_number": "345678909874",
       "bank_name": "HDFC",
       "branch_name": "Australia Sydney"
     },
     {
       "customer_id": "4445672",
+      "name": "John",
+      "balance": "200000",
       "account_number": "834678909851",
       "bank_name": "HDFC",
       "branch_name": "Australia Sydney"
     },
     {
       "customer_id": "8883425",
+      "name": "John",
+      "balance": "200000",
       "account_number": "548978909890",
       "bank_name": "HDFC",
       "branch_name": "Australia Sydney"
     },
     {
       "customer_id": "9845634",
+      "name": "John",
+      "balance": "200000",
       "account_number": "832789098744",
       "bank_name": "HDFC",
       "branch_name": "Australia Sydney"

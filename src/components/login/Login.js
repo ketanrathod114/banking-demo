@@ -1,49 +1,45 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { doLogin } from "../../store/actions";
+import { addCustomer, doLogin } from "../../store/actions";
 
 const Login = () => {
   const dispatch = useDispatch();
-  const [customerID, setCustomerID] = useState('')
-  const [password, setPassword] = useState('')
-  const [error, setError] = useState(true)
-
+  const [customerID, setCustomerID] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(true);
 
   const onCustomerInput = (e) => {
     const re = /^[0-9\b]+$/;
-     if(re.test(e.target.value)){
+    if (re.test(e.target.value)) {
       setCustomerID(e.target.value);
     }
-    
-  }
+  };
 
-  
   const onPasswordInput = (e) => {
     setPassword(e.target.value);
-  }
-
-
+  };
 
   const onSubmit = async () => {
-    if(customerID === '' || customerID.length<6){
-      setError('Enter Valid Customer ID');
-      return
-    } else if(password === ''){
-      setError('Password Field cannot be Empty')
-      return
+    if (customerID === "" || customerID.length < 6) {
+      setError("Enter Valid Customer ID");
+      return;
+    } else if (password === "") {
+      setError("Password Field cannot be Empty");
+      return;
     }
     const response = await fetch("http://localhost:3001/customers");
     const responseData = await response.json();
-    let custIndex = responseData.findIndex((x) => x.customer_id === customerID)
-    if(custIndex===-1){
-      setError('Customer ID is Not valid')
-      return
-    } else if(responseData[custIndex].password !== password) {
-      setError('Please enter valid credentials')
-      return
+    let custIndex = responseData.findIndex((x) => x.customer_id === customerID);
+    if (custIndex === -1) {
+      setError("Customer ID is Not valid");
+      return;
+    } else if (responseData[custIndex].password !== password) {
+      setError("Please enter valid credentials");
+      return;
     }
-    console.log('dispatching')
-     dispatch(doLogin())
+    console.log("dispatching", customerID);
+    dispatch(doLogin());
+    dispatch(addCustomer(customerID));
   };
   return (
     <div className="login-wrapper contiainer-fluid pt-5 bg-light">
@@ -52,7 +48,10 @@ const Login = () => {
           <div className="col-sm-5 bg-dark rounded d-flex justify-content-center p-5">
             <div className="text-white align-self-center ">
               <h1 className="fw-light">Login</h1>
-              <h5 className="fw-light fst-italic">with your Customer ID<b/> and Password</h5>
+              <h5 className="fw-light fst-italic">
+                with your Customer ID
+                <b /> and Password
+              </h5>
             </div>
           </div>
           <div className="col-sm-7">
@@ -87,7 +86,7 @@ const Login = () => {
                 />
               </div>
               <div className="mb-3">
-              {error && <span className="text-danger mb-2">{error}</span>}
+                {error && <span className="text-danger mb-2">{error}</span>}
                 <button className="btn btn-dark w-100 mt-2" onClick={onSubmit}>
                   Login
                 </button>
