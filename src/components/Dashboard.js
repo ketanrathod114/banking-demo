@@ -1,14 +1,14 @@
 import { useDispatch } from "react-redux";
-import { logout } from "../../store/actions";
+import { logout } from "../store/actions";
 
-const Transfer = () => {
+const Dashboard = () => {
   const dispatch = useDispatch();
   const onSubmit = () => {
     dispatch(logout());
   };
   return (
     <div className="contaianer text-center">
-      <h1>Transfer</h1>
+      <h1>Dashboard</h1>
       <button className="btn btn-dark" onClick={onSubmit}>
         Logout
       </button>
@@ -16,4 +16,4 @@ const Transfer = () => {
   );
 };
 
-export default Transfer;
+export default Dashboard;

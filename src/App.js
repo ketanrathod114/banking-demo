@@ -3,7 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 
 import './App.css';
 import Login from './components/login/Login';
-import Transfer from './components/transfer/Transfer';
+import Dashboard from './components/Dashboard';
 
 function App() {
   const isLoggedIn = useSelector((state) => state.isLoggedIn);
@@ -17,7 +17,7 @@ function App() {
           </Route>
         )}
         <Route path='/' exact>
-          <Transfer />
+          <Dashboard />
         </Route>
         {/* {!isLoggedIn && (
           <Route path='/auth'>
