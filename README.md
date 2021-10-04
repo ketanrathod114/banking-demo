@@ -1,6 +1,41 @@
-# Getting Started with Create React App
+# Banking Demo App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is managed at [Banking Demo](https://github.com/ketanrathod114/banking-demo/).
+
+## Architechture
+
+React v17 with Hooks
+
+### State management 
+Redux, thunk
+    - Stores
+        - Login 
+        - Fund Transfer 
+        - Customer 
+
+### Routing - SPA 
+React-router-dom
+
+### UI Library
+Bootstrap v5
+
+### API Library
+Axios
+
+### Component Architechture
+App
+    -login
+    -Dashboard
+        - Header with user information nd logout
+        - New fund transfer
+        - List of all transaction
+
+### Unit testing
+Jest
+
+### Mock API
+Json-server
+
 
 ## Available Scripts
 
